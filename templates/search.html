@@ -1,0 +1,15 @@
+<form method="GET">
+  <input name="q" placeholder="Search">
+  <button type="submit">Search</button>
+</form>
+
+<ul>
+{% for p in results %}
+  <li>
+    {{ p.name }} (Owner: {{ p.owner.name }})
+    <a href="/patient/{{ p.id }}">View Record</a>
+    <a href="/pdf/{{ p.id }}">Download PDF</a>
+    <a href="/pdf/{{ p.id }}">Download PDF</a>
+  </li>
+{% endfor %}
+</ul>

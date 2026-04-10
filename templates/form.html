@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Veterinary Medical History</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .row {
+            display: flex;
+            gap: 10px;
+        }
+        .row div {
+            flex: 1;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Veterinary Medical History Form</h1>
+
+```
+<form method="POST" action="/submit">
+
+    <h2>Owner Information</h2>
+    <label>Owner Name</label>
+    <input name="owner">
+
+    <label>Phone</label>
+    <input name="phone">
+
+    <label>Email</label>
+    <input name="email">
+
+    <label>Address</label>
+    <input name="address">
+
+    <h2>Patient Information</h2>
+    <label>Pet Name</label>
+    <input name="pet">
+
+    <div class="row">
+        <div>
+            <label>Species</label>
+            <input name="species">
+        </div>
+        <div>
+            <label>Breed</label>
+            <input name="breed">
+        </div>
+    </div>
+
+    <div class="row">
+        <div>
+            <label>Age</label>
+            <input name="age">
+        </div>
+        <div>
+            <label>Sex</label>
+            <select name="sex">
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+            <label>Reproductive Status</label>
+<select name="reproductive_status">
+    <option>Intact</option>
+    <option>Neutered</option>
+    <option>Spayed</option>
+</select>
+        </div>
+    </div>
+
+    <label>Weight</label>
+    <input name="weight">
+
+    <h2>Medical History</h2>
+    <label>Current Medications</label>
+    <textarea name="medications"></textarea>
+
+    <label>Allergies</label>
+    <textarea name="allergies"></textarea>
+
+    <label>Past Illnesses / Surgeries</label>
+    <textarea name="history"></textarea>
+
+    <label>Vaccination Status</label>
+    <textarea name="vaccines"></textarea><h2>Vaccination Status</h2>
+
+    <label><input type="checkbox" name="vaccines" value="Rabies"> Rabies</label>
+    <label><input type="checkbox" name="vaccines" value="DHPP"> DHPP</label>
+    <label><input type="checkbox" name="vaccines" value="Bordetella"> Bordetella</label>
+    <label><input type="checkbox" name="vaccines" value="Leptospirosis"> Leptospirosis</label>
+    <label><input type="checkbox" name="vaccines" value="FVRCP"> FVRCP</label>
+    <label><input type="checkbox" name="vaccines" value="FeLV"> FeLV</label>
+
+    <label>Diet</label>
+    <textarea name="diet"></textarea>
+    <h2>FAS (Fear, Anxiety, Stress)</h2>
+
+<label>FAS Score</label>
+<select name="fas_score">
+    <option value="0">0 - Relaxed</option>
+    <option value="1">1 - Mild stress</option>
+    <option value="2">2 - Moderate stress</option>
+    <option value="3">3 - Severe stress</option>
+    <option value="4">4 - Extreme stress</option>
+    <option value="5">5 - Panic/aggressive</option>
+</select>
+
+<label>FAS Notes</label>
+<textarea name="fas_notes" placeholder="Behavior, triggers, handling notes"></textarea>
+
+    <label>Reason for Visit</label>
+    <textarea name="reason"></textarea>
+    <h2>Vitals</h2>
+
+<div class="row">
+    <div>
+        <label>Weight (kg)</label>
+        <input name="weight">
+    </div>
+    <div>
+        <label>Temperature (°F)</label>
+        <input name="temperature">
+    </div>
+</div>
+
+<div class="row">
+    <div>
+        <label>Heart Rate (bpm)</label>
+        <input name="heart_rate">
+    </div>
+    <div>
+        <label>Respiratory Rate (rpm)</label>
+        <input name="respiratory_rate">
+    </div>
+</div>
+
+    <h2>Physical Exam</h2>
+
+    <label>Integument (skin/coat)</label>
+    <textarea name="integument" placeholder="Normal / lesions / alopecia / etc"></textarea>
+
+    <label>Eyes / Ears / Nose / Throat (ENT)</label>
+    <textarea name="ent" placeholder="Discharge, redness, etc"></textarea>
+
+    <label>Musculoskeletal</label>
+    <textarea name="msk" placeholder="Gait, lameness, joints"></textarea>
+
+    <label>Lymph Nodes</label>
+    <textarea name="lymph_nodes" placeholder="Normal / enlarged"></textarea>
+
+    <label>Cardiovascular</label>
+    <textarea name="cardiovascular" placeholder="Heart rate, murmurs"></textarea>
+
+    <label>Respiratory</label>
+    <textarea name="respiratory" placeholder="Effort, lung sounds"></textarea>
+
+    <label>Gastrointestinal</label>
+    <textarea name="gastrointestinal" placeholder="Palpation findings"></textarea>
+
+    <label>Neurologic</label>
+    <textarea name="neurologic" placeholder="Mentation, reflexes"></textarea>
+
+    <h2>Clinical Notes</h2>
+    <textarea name="notes"></textarea>
+
+    <button type="submit">Submit Record</button>
+</form>
+```
+
+</div>
+</body>
+</html>

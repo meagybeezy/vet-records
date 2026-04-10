@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Edit Visit</h1>
+
+<form method="POST">
+
+<label>Notes</label>
+<textarea name="notes">{{ history.notes }}</textarea>
+
+<label>Medications</label>
+<textarea name="medications">{{ history.medications }}</textarea>
+
+<label>Allergies</label>
+<textarea name="allergies">{{ history.allergies }}</textarea>
+
+<label>Integument</label>
+<textarea name="integument">{{ history.integument }}</textarea>
+
+<label>ENT</label>
+<textarea name="ent">{{ history.ent }}</textarea>
+
+<label>MSK</label>
+<textarea name="msk">{{ history.msk }}</textarea>
+
+<label>Weight</label>
+<input name="weight" value="{{ history.weight }}">
+
+<label>Temperature</label>
+<input name="temperature" value="{{ history.temperature }}">
+
+<button type="submit">Save Changes</button>
+
+</form>
+</body>
+</html>

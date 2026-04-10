@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Record</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f4f6f8;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        h2 {
+            border-bottom: 1px solid #ddd;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h1>{{ patient.name }} - Medical Record</h1>
+
+    <div class="section">
+        <h2>Owner Information</h2>
+        <p><b>Name:</b> {{ patient.owner.name }}</p>
+        <p><b>Phone:</b> {{ patient.owner.phone }}</p>
+        <p><b>Email:</b> {{ patient.owner.email }}</p>
+        <p><b>Address:</b> {{ patient.owner.address }}</p>
+    </div>
+
+    <div class="section">
+        <h2>Patient Information</h2>
+        <p><b>Species:</b> {{ patient.species }}</p>
+        <p><b>Breed:</b> {{ patient.breed }}</p>
+        <p><b>Age:</b> {{ patient.age }}</p>
+        <p><b>Sex:</b> {{ patient.sex }}</p>
+    </div>
+
+    {% for h in patient.histories %}
+    
+    <div class="section">
+        <h2>Visit</h2>
+
+        <p><b>Reproductive Status:</b> {{ h.reproductive_status }}</p>
+
+        <h3>Vitals</h3>
+        <p>Weight: {{ h.weight }}</p>
+        <p>Temperature: {{ h.temperature }}</p>
+        <p>Heart Rate: {{ h.heart_rate }}</p>
+        <p>Respiratory Rate: {{ h.respiratory_rate }}</p>
+
+        <h3>FAS</h3>
+        <p>Score: {{ h.fas_score }}</p>
+        <p>{{ h.fas_notes }}</p>
+
+        <h3>Vaccines</h3>
+        <p>{{ h.vaccines }}</p>
+
+        <h3>Medical History</h3>
+        <p><b>Medications:</b> {{ h.medications }}</p>
+        <p><b>Allergies:</b> {{ h.allergies }}</p>
+        <p><b>Past History:</b> {{ h.past_history }}</p>
+        <p><b>Diet:</b> {{ h.diet }}</p>
+        <p><b>Reason:</b> {{ h.reason }}</p>
+
+        <h3>Physical Exam</h3>
+        <p><b>Integument:</b> {{ h.integument }}</p>
+        <p><b>ENT:</b> {{ h.ent }}</p>
+        <p><b>MSK:</b> {{ h.msk }}</p>
+        <p><b>Lymph Nodes:</b> {{ h.lymph_nodes }}</p>
+        <p><b>Cardiovascular:</b> {{ h.cardiovascular }}</p>
+        <p><b>Respiratory:</b> {{ h.respiratory }}</p>
+        <p><b>GI:</b> {{ h.gastrointestinal }}</p>
+        <p><b>Neurologic:</b> {{ h.neurologic }}</p>
+
+        <h3>Clinical Notes</h3>
+        <p>{{ h.notes }}</p>
+    </div>
+
+    {% endfor %}
+
+</div>
+</body>
+</html>
