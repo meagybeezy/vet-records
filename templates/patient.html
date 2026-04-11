@@ -47,8 +47,8 @@
     {% for h in patient.histories %}
     
     <div class="section">
-        <h2>Visit</h2>
-
+        <h2>Visit - {{ h.date }}</h2>
+        <a href="/edit/{{ h.id }}">Edit Visit</a>
         <p><b>Reproductive Status:</b> {{ h.reproductive_status }}</p>
 
         <h3>Vitals</h3>

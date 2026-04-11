@@ -1,18 +1,54 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Edit Visit</title>
+</head>
 <body>
+
 <h1>Edit Visit</h1>
 
 <form method="POST">
 
-<label>Notes</label>
-<textarea name="notes">{{ history.notes }}</textarea>
+<h2>Vitals</h2>
+<label>Weight</label>
+<input name="weight" value="{{ history.weight }}">
 
+<label>Temperature</label>
+<input name="temperature" value="{{ history.temperature }}">
+
+<label>Heart Rate</label>
+<input name="heart_rate" value="{{ history.heart_rate }}">
+
+<label>Respiratory Rate</label>
+<input name="respiratory_rate" value="{{ history.respiratory_rate }}">
+
+<h2>FAS</h2>
+<label>FAS Score</label>
+<input name="fas_score" value="{{ history.fas_score }}">
+
+<label>FAS Notes</label>
+<textarea name="fas_notes">{{ history.fas_notes }}</textarea>
+
+<h2>Medical</h2>
 <label>Medications</label>
 <textarea name="medications">{{ history.medications }}</textarea>
 
 <label>Allergies</label>
 <textarea name="allergies">{{ history.allergies }}</textarea>
+
+<label>Past History</label>
+<textarea name="history">{{ history.past_history }}</textarea>
+
+<label>Diet</label>
+<textarea name="diet">{{ history.diet }}</textarea>
+
+<label>Reason</label>
+<textarea name="reason">{{ history.reason }}</textarea>
+
+<label>Vaccines</label>
+<input name="vaccines" value="{{ history.vaccines }}">
+
+<h2>Physical Exam</h2>
 
 <label>Integument</label>
 <textarea name="integument">{{ history.integument }}</textarea>
@@ -23,14 +59,27 @@
 <label>MSK</label>
 <textarea name="msk">{{ history.msk }}</textarea>
 
-<label>Weight</label>
-<input name="weight" value="{{ history.weight }}">
+<label>Lymph Nodes</label>
+<textarea name="lymph_nodes">{{ history.lymph_nodes }}</textarea>
 
-<label>Temperature</label>
-<input name="temperature" value="{{ history.temperature }}">
+<label>Cardiovascular</label>
+<textarea name="cardiovascular">{{ history.cardiovascular }}</textarea>
+
+<label>Respiratory</label>
+<textarea name="respiratory">{{ history.respiratory }}</textarea>
+
+<label>GI</label>
+<textarea name="gastrointestinal">{{ history.gastrointestinal }}</textarea>
+
+<label>Neurologic</label>
+<textarea name="neurologic">{{ history.neurologic }}</textarea>
+
+<h2>Notes</h2>
+<textarea name="notes">{{ history.notes }}</textarea>
 
 <button type="submit">Save Changes</button>
 
 </form>
+
 </body>
 </html>
