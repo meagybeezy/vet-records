@@ -34,7 +34,7 @@ class Patient(Base):
 from datetime import datetime
 
 class MedicalHistory(Base):
-    __tablename__ = 'histories'
+    __tablename__ = 'histories2'
     id = Column(Integer, primary_key=True)
 
     # Date
