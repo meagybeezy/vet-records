@@ -9,7 +9,6 @@ init_db()
 
 # connect to database
 session = Session()
-from models import Session, Owner, Patient, MedicalHistory
 @app.route('/')
 def home():
     return render_template('form.html')
@@ -65,7 +64,6 @@ def submit():
         gastrointestinal=request.form.get('gastrointestinal'),
         neurologic=request.form.get('neurologic'),
 
-        date=None,
         patient=patient
     )
 
