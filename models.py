@@ -75,7 +75,7 @@ class MedicalHistory(Base):
     patient = relationship("Patient", back_populates="histories")
 
 from datetime import datetime
-date = Column(String, default=lambda: datetime.datetime.now().strftime("%Y-%m-%d %H:%M"))
+    date = Column(String, default=lambda: datetime.datetime.now().strftime("%Y-%m-%d %H:%M"))
 
 
 # DATABASE SETUP
