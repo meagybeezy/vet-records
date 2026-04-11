@@ -31,11 +31,14 @@ class Patient(Base):
     owner = relationship("Owner", back_populates="pets")
     histories = relationship("MedicalHistory", back_populates="patient")
 
+from datetime import datetime
 
-# MEDICAL HISTORY TABLE
 class MedicalHistory(Base):
     __tablename__ = 'histories'
     id = Column(Integer, primary_key=True)
+
+    # Date
+    date = Column(String, default=lambda: datetime.now().strftime("%Y-%m-%d %H:%M"))
 
     # Vitals
     weight = Column(String)
@@ -58,10 +61,10 @@ class MedicalHistory(Base):
     # Reproductive status
     reproductive_status = Column(String)
 
-    # Vaccines (store as text for now)
+    # Vaccines
     vaccines = Column(Text)
 
-    # Physical exam sections
+    # Physical exam
     integument = Column(Text)
     ent = Column(Text)
     msk = Column(Text)
@@ -73,10 +76,6 @@ class MedicalHistory(Base):
 
     patient_id = Column(Integer, ForeignKey('patients.id'))
     patient = relationship("Patient", back_populates="histories")
-
-from datetime import datetime
-    date = Column(String, default=lambda: datetime.datetime.now().strftime("%Y-%m-%d %H:%M"))
-
 
 # DATABASE SETUP
 import os
