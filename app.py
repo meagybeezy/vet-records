@@ -1,9 +1,11 @@
 from flask import Flask, render_template, request, redirect, send_file
-from models import Session, Owner, Patient, MedicalHistory
+from models import Session, Owner, Patient, MedicalHistory, init_db
 from reportlab.pdfgen import canvas
 import io
 
 app = Flask(__name__)
+
+init_db()
 
 # connect to database
 session = Session()
